@@ -5,8 +5,7 @@ class StableDiffusionWrapper:
     def __init__(self) -> None:
         repo_id = "Linaqruf/anything-v3.0"
         pipe = DiffusionPipeline.from_pretrained(
-            repo_id, revision="fp16",
-            torch_dtype=torch.float16
+            repo_id
         )
 
         pipe.scheduler = DPMSolverMultistepScheduler.from_config(
